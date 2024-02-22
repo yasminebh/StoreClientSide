@@ -5,6 +5,8 @@ import SideBar from "../../components/SideBar/Sidebar";
 import Footer from "../../components/Footer/Footer";
 
 import { Outlet } from "react-router-dom";
+import HeroNav from "../../components/Hero/HeroNav";
+import Hero from "../../components/Hero/Hero";
 
 const Home = () => {
   return (
@@ -12,9 +14,18 @@ const Home = () => {
       <div>
         <Header />
 
-        <SideBar />
+        <div className="container-fluid mb-5">
+          <div className="row border-top px-xl-5">
+            <SideBar />
 
-       <Outlet />
+            <div className="col-lg-9">
+              <HeroNav />
+              <Hero />
+            </div>
+          </div>
+        </div>
+
+        <Outlet />
 
         <Footer />
 

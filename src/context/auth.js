@@ -3,9 +3,9 @@ import http from "./http";
 
 
 const register = (data) => {
-  return http.post("/customer/register", data);
+  return http.post("/customer", data);
 };
-const signup = (data) => {
+const signin = (data) => {
   return http.post("/user/login", data);
 };
 
@@ -20,4 +20,4 @@ const forgetPassword = (data) => {
 const ResetPassword = (token, data) => {
   return http.put(`/user/resetPassword/${token}`, data);
 };
-export default { register,signup, logout, forgetPassword, ResetPassword };
+export default { register, signin, logout, forgetPassword, ResetPassword };

@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import './styles.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../../context/auth';
 const Register = () => {
   const [data, setData] = useState({
-    fullName:"",
-    password:"",
-    phone:"",
-    
+    fullName: "",
+    password: "",
+    phone: "",
+    repeatpassword: "",
+    CIN: "",
+    address: "",
   });
 
    const navigate = useNavigate();
@@ -50,35 +52,99 @@ const Register = () => {
         <div className="container">
           <div className="title">Registration</div>
           <div className="content">
-            <form action="#">
+            <form action="#" onSubmit={onsubmitHAndler}>
               <div className="user-details">
                 <div className="input-box">
                   <span className="details">Full Name</span>
-                  <input type="text" placeholder="Enter your name" required name='fullName' value={data.fullName} onChange={onChangeHandler}/>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    name="fullName"
+                    value={data.fullName}
+                    onChange={onChangeHandler}
+                  />
                 </div>
 
                 <div className="input-box">
                   <span className="details">Email</span>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input
+                    type="text"
+                    placeholder="Enter your email"
+                    required
+                    name="email"
+                    value={data.email}
+                    onChange={onChangeHandler}
+                  />
                 </div>
                 <div className="input-box">
                   <span className="details">Phone Number</span>
-                  <input type="text" placeholder="Enter your number" required />
-                </div>
-                <div className="input-box">
-                  <span className="details">Password</span>
                   <input
                     type="text"
+                    placeholder="Enter your number"
+                    required
+                    name="phone"
+                    value={data.phone}
+                    onChange={onChangeHandler}
+                  />
+                </div>
+                <div className="input-box">
+                  <span className="details">CIN</span>
+                  <input
+                    type="text"
+                    placeholder="please provide ur CIN"
+                    required
+                    name="CIN"
+                    value={data.CIN}
+                    onChange={onChangeHandler}
+                  />
+                </div>
+                <div className="input-box">
+                  <span
+                    className="details"
+                    name="password"
+                    value={data.password}
+                    onChange={onChangeHandler}
+                  >
+                    Password
+                  </span>
+                  <input
+                    type="password"
                     placeholder="Enter your password"
+                    name="password"
+                    value={data.password}
+                    onChange={onChangeHandler}
                     required
                   />
                 </div>
                 <div className="input-box">
-                  <span className="details">Confirm Password</span>
+                  <span
+                    className="details"
+                    name="repeatpassword"
+                    value={data.repeatpassword}
+                    onChange={onChangeHandler}
+                  >
+                    Confirm Password
+                  </span>
                   <input
-                    type="text"
+                    type="password"
                     placeholder="Confirm your password"
                     required
+                    name="repeatpassword"
+                    value={data.repeatpassword}
+                    onChange={onChangeHandler}
+                  />
+                </div>
+
+                <div className="input-box">
+                  <span className="">address</span>
+                  <input
+                    type="text"
+                    placeholder="please provide ur address"
+                    required
+                    name="address"
+                    value={data.address}
+                    onChange={onChangeHandler}
                   />
                 </div>
               </div>
@@ -87,6 +153,12 @@ const Register = () => {
                 <input type="submit" defaultValue="Register" />
               </div>
             </form>
+            <div className="signin">
+              <Link to={"/login"}>
+                {" "}
+                already have an account ? , sign in here
+              </Link>
+            </div>
           </div>
         </div>
       </div>

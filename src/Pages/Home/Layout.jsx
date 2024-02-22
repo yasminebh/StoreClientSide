@@ -5,6 +5,7 @@ import OfferCard from '../../components/OfferCard';
 import ProductsCard from '../../components/Products/ProductsCard';
 import Subscribe from '../../components/Subscribe';
 import CardProvider from '../../components/CardProvider';
+import Vendor from '../../components/vendor/Vendor';
 
 const Layout = () => {
 return (
@@ -22,7 +23,7 @@ return (
       <ProductsCard />
       {/* Vendor Start */}
       <CardProvider />
-
+      <Vendor/>
     </>
   );
 }

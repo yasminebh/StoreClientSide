@@ -142,7 +142,9 @@ form .button input:hover {
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #C98C86, #EDF1FF);
 }
-
+.sigin {
+  margin: auto;
+}
 @media(max-width: 584px) {
   .container {
     max-width: 100%;
